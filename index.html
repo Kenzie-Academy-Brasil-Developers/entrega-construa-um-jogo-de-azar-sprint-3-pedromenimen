@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra papel ou tesoura</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,20 +18,100 @@
     </div>
     <div>
         <div id="jankenpon">
-            <div class="janken"><a id="rock"><img src="/assets/pedra.png"></a></div>
-            <div class="janken"><a id="paper"><img src="/assets/papel.png"></a></div>
-            <div class="janken"><a id="scissor"><img src="/assets/tesoura.png"></a></div>
+            <div class="janken"><a id="rock"><img src="/pedra.png"></a></div>
+            <div class="janken"><a id="paper"><img src="/papel.png"></a></div>
+            <div class="janken"><a id="scissor"><img src="/tesoura.png"></a></div>
         </div>
     </div>
-    <img src="/assets/rock.gif" class="hide image pedraoponente">
-    <img src="/assets/paper.gif" class="hide image papeloponente">
-    <img src="/assets/scissor.gif" class="hide image tesouraoponente">
-    <div id="win" class="hide"><img class="win" src="/assets/WIN.png"><button id="resetwin">JOGAR NOVAMENTE</button></div>
-    <div id="lose" class="hide"><img class="lose" src="/assets/lose.png"><button id="resetlose">MAIS UMA CHANCE</button></div>
+    <img src="/rock.gif" class="hide image pedraoponente">
+    <img src="/paper.gif" class="hide image papeloponente">
+    <img src="/scissor.gif" class="hide image tesouraoponente">
+    <div id="win" class="hide"><img class="win" src="/WIN.png"><button id="resetwin">JOGAR NOVAMENTE</button></div>
+    <div id="lose" class="hide"><img class="lose" src="/lose.png"><button id="resetlose">MAIS UMA CHANCE</button></div>
     <div id="draw" class="hide"><button id="resetdraw">TENTAR DENOVO</button>
     </div>
-    <script src="/index.js">
+    <script>
+        let derrota = document.querySelector("#lose")
+        let empate = document.querySelector("#draw")
+        let vitoria = document.querySelector("#win")
+        let tesouraOponente = document.querySelector(".tesouraoponente")
+        let pedraOponente = document.querySelector(".pedraoponente")
+        let papelOponente = document.querySelector(".papeloponente")
 
+        // 1
+        let botaopedra = document.querySelector("#rock")
+        botaopedra.addEventListener("click", function () {
+            if (Math.floor(Math.random() * 3) + 1 === 2) {
+                vitoria.classList.remove("hide")
+                tesouraOponente.classList.remove("hide")
+            } else if (Math.floor(Math.random() * 3) + 1 === 3) {
+                derrota.classList.remove("hide")
+                papelOponente.classList.remove("hide")
+            } else {
+                empate.classList.remove("hide")
+                pedraOponente.classList.remove("hide")
+            }
+        }
+        )
+
+        // 2
+        let botaotesoura = document.querySelector("#scissor")
+        botaotesoura.addEventListener("click", function () {
+            if (Math.floor(Math.random() * 3) + 1 === 3) {
+                vitoria.classList.remove("hide")
+                papelOponente.classList.remove("hide")
+            } else if (Math.floor(Math.random() * 3) + 1 === 1) {
+                derrota.classList.remove("hide")
+                pedraOponente.classList.remove("hide")
+            } else {
+                empate.classList.remove("hide")
+                tesouraOponente.classList.remove("hide")
+            }
+        }
+        )
+
+        // 3
+        let botaopapel = document.querySelector("#paper")
+        botaopapel.addEventListener("click", function () {
+            if (Math.floor(Math.random() * 3) + 1 === 1) {
+                vitoria.classList.remove("hide")
+                pedraOponente.classList.remove("hide")
+            } else if (Math.floor(Math.random() * 3) + 1 === 2) {
+                derrota.classList.remove("hide")
+                tesouraOponente.classList.remove("hide")
+            } else {
+                empate.classList.remove("hide")
+                papelOponente.classList.remove("hide")
+            }
+        }
+        )
+
+        let botaoresetlose = document.querySelector("#resetlose")
+        botaoresetlose.addEventListener("click", function () {
+            let resetlose = document.querySelector("#lose")
+            resetlose.classList.add("hide")
+            document.getElementsByTagName("img")[3].classList.add("hide")
+            document.getElementsByTagName("img")[4].classList.add("hide")
+            document.getElementsByTagName("img")[5].classList.add("hide")
+        })
+
+        let botaoresetdraw = document.querySelector("#resetdraw")
+        botaoresetdraw.addEventListener("click", function () {
+            let resetdraw = document.querySelector("#draw")
+            resetdraw.classList.add("hide")
+            document.getElementsByTagName("img")[3].classList.add("hide")
+            document.getElementsByTagName("img")[4].classList.add("hide")
+            document.getElementsByTagName("img")[5].classList.add("hide")
+        })
+
+        let botaoresetwin = document.querySelector("#resetwin")
+        botaoresetwin.addEventListener("click", function () {
+            let resetwin = document.querySelector("#win")
+            resetwin.classList.add("hide")
+            document.getElementsByTagName("img")[3].classList.add("hide")
+            document.getElementsByTagName("img")[4].classList.add("hide")
+            document.getElementsByTagName("img")[5].classList.add("hide")
+        })
     </script>
 </body>
 
