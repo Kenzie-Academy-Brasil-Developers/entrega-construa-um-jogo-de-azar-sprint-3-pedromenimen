@@ -1,0 +1,58 @@
+#jankenpon {
+    display: flex;
+    flex-direction: row;
+}
+
+#win, #lose, #draw {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.janken {
+    flex: 1;
+    text-align: center;
+    margin-top: 20vh;    
+}
+
+#pedra2, #papel2, #tesoura2 {
+    display: none;
+}
+
+#titulo {
+    height: 30vh;
+    text-align: center;
+}
+
+#win {
+    background-color: green;
+}
+
+#lose {
+    background-color: red;
+}
+
+#draw {
+    background-color: lightblue;
+}
+
+.image {
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    top:100px;
+    z-index: 2;
+}
+
+#resetwin, #resetlose, #resetdraw {
+    position: absolute;
+    left:40%;
+    width: 20%;
+    top: 62vh;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra papel ou tesoura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="titulo">
+        <h1>Pedra papel ou tesoura</h1>
+    </div>
+    <div>
+        <div>
+            <div class="janken2" id="pedra2"></div>
+            <div class="janken2" id="papel2"></div>
+            <div class="janken2" id="tesoura2"></div>
+        </div>
+        <div id="jankenpon">
+            <div class="janken"><button id="rock">pedra</button></div>
+            <div class="janken"><button id="paper">papel</button></div>
+            <div class="janken"><button id="scissor">tesoura</button></div>
+        </div>
+    </div>
+    <img src="/assets/paper.gif" id="imgpaper" class="hide image">
+    <img src="/assets/scissor.gif" class="hide image">
+    <div id="win" class="hide">WIN!<button id="resetwin">tentar denovo</button></div>
+    <div id="lose" class="hide">LOSE...<button id="resetlose">tentar denovo</button></div>
+    <div id="draw" class="hide">DRAW<button id="resetdraw">tentar denovo</button>
+    </div>
+    <script src="/index.js">
+
+    </script>
+</body>
+
+</html>
