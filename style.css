@@ -1,3 +1,8 @@
+body {
+    font-size: 2.5vw;
+    flex-direction: column;
+    display: flex;
+}
 #jankenpon {
     display: flex;
     flex-direction: row;
@@ -9,6 +14,15 @@
     position: absolute;
     top: 0;
     left: 0;
+    background-color: white;
+}
+
+#rock>img, #paper>img, #scissor>img {
+    width: 20vw;
+}
+
+h3 {
+    margin-top: 35vh;
 }
 
 .hide {
@@ -21,38 +35,71 @@
     margin-top: 20vh;    
 }
 
-#pedra2, #papel2, #tesoura2 {
-    display: none;
-}
-
 #titulo {
     height: 30vh;
     text-align: center;
 }
 
-#win {
-    background-color: green;
+.lose, .win {
+    width: 50%;
+    position: absolute;
+    left: 28%;
 }
 
-#lose {
-    background-color: red;
-}
-
-#draw {
-    background-color: lightblue;
+button {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .image {
-    width: 80%;
+    width: 80vw;
     position: absolute;
-    left: 10%;
-    top:100px;
+    left: 10vw;
+    top: 100px;
     z-index: 2;
 }
 
 #resetwin, #resetlose, #resetdraw {
     position: absolute;
-    left:40%;
+    left: 40%;
     width: 20%;
     top: 62vh;
+    padding: 10px;
+    min-width: 100px;
+}
+
+#resetwin {
+    background-color: green;
+}
+
+#resetdraw {
+    background-color: yellow;
+}
+
+#resetlose {
+    background-color: red;
+}
+
+@media only screen and (min-width:670px) {
+   h3 {
+       margin-top: 10vh;
+   }
+   #resetwin, #resetlose, #resetdraw {
+       z-index: 3;
+       width: 50%;
+       height: 20%;
+       font-size: 120%;
+       border-radius: 50px;
+       left: 25%;
+   }
+   .pedraoponente, .papeloponente, .tesouraoponente {
+       top: 0;
+       left: 0;
+       width: 100vw;
+       height: 100vh;
+   }
+   .win, .lose {
+       z-index: 9;
+   }
 }

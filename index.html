@@ -7,29 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra papel ou tesoura</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 
 <body>
     <div id="titulo">
-        <h1>Pedra papel ou tesoura</h1>
+        <h1>Pedra Papel ou Tesoura</h1>
+        <h3>Escolha uma opção</h3>
     </div>
     <div>
-        <div>
-            <div class="janken2" id="pedra2"></div>
-            <div class="janken2" id="papel2"></div>
-            <div class="janken2" id="tesoura2"></div>
-        </div>
         <div id="jankenpon">
-            <div class="janken"><button id="rock">pedra</button></div>
-            <div class="janken"><button id="paper">papel</button></div>
-            <div class="janken"><button id="scissor">tesoura</button></div>
+            <div class="janken"><a id="rock"><img src="/assets/pedra.png"></a></div>
+            <div class="janken"><a id="paper"><img src="/assets/papel.png"></a></div>
+            <div class="janken"><a id="scissor"><img src="/assets/tesoura.png"></a></div>
         </div>
     </div>
-    <img src="/assets/paper.gif" id="imgpaper" class="hide image">
-    <img src="/assets/scissor.gif" class="hide image">
-    <div id="win" class="hide">WIN!<button id="resetwin">tentar denovo</button></div>
-    <div id="lose" class="hide">LOSE...<button id="resetlose">tentar denovo</button></div>
-    <div id="draw" class="hide">DRAW<button id="resetdraw">tentar denovo</button>
+    <img src="/assets/rock.gif" class="hide image pedraoponente">
+    <img src="/assets/paper.gif" class="hide image papeloponente">
+    <img src="/assets/scissor.gif" class="hide image tesouraoponente">
+    <div id="win" class="hide"><img class="win" src="/assets/WIN.png"><button id="resetwin">JOGAR NOVAMENTE</button></div>
+    <div id="lose" class="hide"><img class="lose" src="/assets/lose.png"><button id="resetlose">MAIS UMA CHANCE</button></div>
+    <div id="draw" class="hide"><button id="resetdraw">TENTAR DENOVO</button>
     </div>
     <script src="/index.js">
 
