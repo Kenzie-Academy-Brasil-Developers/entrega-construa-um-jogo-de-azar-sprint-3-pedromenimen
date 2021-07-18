@@ -87,11 +87,12 @@ button {
    }
    #resetwin, #resetlose, #resetdraw {
        z-index: 3;
-       width: 50%;
+       width: 20%;
        height: 20%;
        font-size: 120%;
        border-radius: 50px;
-       left: 25%;
+       left: 40%;
+       margin-top: 10vh;
    }
    .pedraoponente, .papeloponente, .tesouraoponente {
        top: 0;
