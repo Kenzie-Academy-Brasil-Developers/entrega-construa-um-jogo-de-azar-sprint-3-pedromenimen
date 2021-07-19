@@ -80,6 +80,13 @@ button {
 #resetlose {
     background-color: red;
 }
+h2 {
+    position: absolute;
+    z-index: 5;
+    margin-top: 200px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 @media only screen and (min-width:670px) {
    h3 {
@@ -101,6 +108,9 @@ button {
        height: 100vh;
    }
    .win, .lose {
-       z-index: 9;
+       z-index: 4;
+   }
+   h2 {
+       color: white;
    }
 }
