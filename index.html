@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra papel ou tesoura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="titulo">
+        <h1>Pedra Papel ou Tesoura</h1>
+        <h3>Escolha uma opção</h3>
+    </div>
+    <div>
+        <div id="jankenpon">
+            <h2 id="revealRock" class="hide">O adversário escolheu pedra</h2>
+            <h2 id="revealPaper" class="hide"> O adversário escolheu papel</h2>
+            <h2 id="revealScissor" class="hide">O adversário escolheu tesoura</h2>
+            <div class="janken"><a id="rock"><img src="assets/pedra.png" alt="pedra"></a></div>
+            <div class="janken"><a id="paper"><img src="assets/papel.png" alt="papel"></a></div>
+            <div class="janken"><a id="scissor"><img src="assets/tesoura.png" alt="tesoura"></a></div>
+        </div>
+    </div>
+    <img src="assets/rock.gif" class="hide image pedraoponente">
+    <img src="assets/paper.gif" class="hide image papeloponente">
+    <img src="assets/scissor.gif" class="hide image tesouraoponente">
+    <div id="win" class="hide"><img class="win" src="assets/WIN.png"><button id="resetwin">JOGAR NOVAMENTE</button></div>
+    <div id="lose" class="hide"><img class="lose" src="assets/lose.png"><button id="resetlose">MAIS UMA CHANCE</button></div>
+    <div id="draw" class="hide"><button id="resetdraw">TENTAR DENOVO</button>
+    </div>
+    <script>
+        let derrota = document.querySelector("#lose")
+        let empate = document.querySelector("#draw")
+        let vitoria = document.querySelector("#win")
+        let tesouraOponente = document.querySelector(".tesouraoponente")
+        let pedraOponente = document.querySelector(".pedraoponente")
+        let papelOponente = document.querySelector(".papeloponente")
+        let revealPaper = document.querySelector("#revealPaper")
+        let revealRock = document.querySelector("#revealRock")
+        let revealScissor = document.querySelector("#revealScissor")
+        // 1
+        let botaopedra = document.querySelector("#rock")
+        botaopedra.addEventListener("click", function () {
+            if (Math.floor(Math.random() * 3) + 1 === 2) {
+                vitoria.classList.remove("hide")
+                tesouraOponente.classList.remove("hide")
+                revealScissor.classList.remove("hide")
+            } else if (Math.floor(Math.random() * 3) + 1 === 3) {
+                derrota.classList.remove("hide")
+                papelOponente.classList.remove("hide")
+                revealPaper.classList.remove("hide")
+            } else {
+                empate.classList.remove("hide")
+                pedraOponente.classList.remove("hide")
+                revealRock.classList.remove("hide")
+            }
+        }
+        )
+
+        // 2
+        let botaotesoura = document.querySelector("#scissor")
+        botaotesoura.addEventListener("click", function () {
+            if (Math.floor(Math.random() * 3) + 1 === 3) {
+                vitoria.classList.remove("hide")
+                papelOponente.classList.remove("hide")
+                revealPaper.classList.remove("hide")
+            } else if (Math.floor(Math.random() * 3) + 1 === 1) {
+                derrota.classList.remove("hide")
+                pedraOponente.classList.remove("hide")
+                revealRock.classList.remove("hide")
+            } else {
+                empate.classList.remove("hide")
+                tesouraOponente.classList.remove("hide")
+                revealScissor.classList.remove("hide")
+            }
+        }
+        )
+
+        // 3
+        let botaopapel = document.querySelector("#paper")
+        botaopapel.addEventListener("click", function () {
+            if (Math.floor(Math.random() * 3) + 1 === 1) {
+                vitoria.classList.remove("hide")
+                pedraOponente.classList.remove("hide")
+                revealRock.classList.remove("hide")
+            } else if (Math.floor(Math.random() * 3) + 1 === 2) {
+                derrota.classList.remove("hide")
+                tesouraOponente.classList.remove("hide")
+                revealScissor.classList.remove("hide")
+            } else {
+                empate.classList.remove("hide")
+                papelOponente.classList.remove("hide")
+                revealPaper.classList.remove("hide")
+            }
+        }
+        )
+
+        let botaoresetlose = document.querySelector("#resetlose")
+        botaoresetlose.addEventListener("click", function () {
+            let resetlose = document.querySelector("#lose")
+            resetlose.classList.add("hide")
+            document.getElementsByTagName("img")[3].classList.add("hide")
+            document.getElementsByTagName("img")[4].classList.add("hide")
+            document.getElementsByTagName("img")[5].classList.add("hide")
+            document.getElementsByTagName("h2")[0].classList.add("hide")
+            document.getElementsByTagName("h2")[1].classList.add("hide")
+            document.getElementsByTagName("h2")[2].classList.add("hide")
+        })
+        
+        let botaoresetdraw = document.querySelector("#resetdraw")
+        botaoresetdraw.addEventListener("click", function () {
+            let resetdraw = document.querySelector("#draw")
+            resetdraw.classList.add("hide")
+            document.getElementsByTagName("img")[3].classList.add("hide")
+            document.getElementsByTagName("img")[4].classList.add("hide")
+            document.getElementsByTagName("img")[5].classList.add("hide")
+            document.getElementsByTagName("h2")[0].classList.add("hide")
+            document.getElementsByTagName("h2")[1].classList.add("hide")
+            document.getElementsByTagName("h2")[2].classList.add("hide")
+        })
+        
+        let botaoresetwin = document.querySelector("#resetwin")
+        botaoresetwin.addEventListener("click", function () {
+            let resetwin = document.querySelector("#win")
+            resetwin.classList.add("hide")
+            document.getElementsByTagName("img")[3].classList.add("hide")
+            document.getElementsByTagName("img")[4].classList.add("hide")
+            document.getElementsByTagName("img")[5].classList.add("hide")
+            document.getElementsByTagName("h2")[0].classList.add("hide")
+            document.getElementsByTagName("h2")[1].classList.add("hide")
+            document.getElementsByTagName("h2")[2].classList.add("hide")
+        })
+    </script>
+</body>
+
+</html>
