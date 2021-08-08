@@ -81,9 +81,13 @@ button {
     background-color: red;
 }
 h2 {
+    color: white;
     position: absolute;
     z-index: 5;
-    margin-top: 200px;
+    width: 70vw;
+    text-align: center;
+    background-color: black;
+    padding: 5px;
     margin-left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -109,8 +113,5 @@ h2 {
    }
    .win, .lose {
        z-index: 4;
-   }
-   h2 {
-       color: white;
    }
 }
